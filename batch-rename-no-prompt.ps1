@@ -1,11 +1,11 @@
-$validPatterns = '\.docset'  # Ensure exact match for folder names ending in .docset
+$validPatterns = '\.example'  # Ensure exact match for folder names
 
 Write-Host "Scanning for folders matching pattern: $validPatterns"
 
 Get-ChildItem -Directory |
     Where-Object Name -Match $validPatterns |
     ForEach-Object {
-        $newName = $_.Name -replace '\.docset$', '_cheatsheet.docset'
+        $newName = $_.Name -replace '\.example$', '_newtext.example'
 
         # Prevent renaming if the name hasn't changed
         if ($newName -ne $_.Name) {
@@ -24,7 +24,7 @@ pause
 # Example Lines:
 # Where-Object Extension -In $validPatterns |
 # ($_.BaseName -replace 'something', 'something else').ToUpper() + $_.Extension
-# $_.Name + '_cheatsheet'
+# $_.Name + '_example'
 # For files: Where-Object Length -GT 0b | 
 
 # Need to append $_.Extension because $_.BaseName -replace removes the extension.
