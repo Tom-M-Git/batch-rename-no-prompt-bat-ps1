@@ -24,8 +24,6 @@ Get-ChildItem -Directory |
 Write-Host "Finished processing!"
 pause
 
-# Make sure to wrap everything from $_.BaseName to the end of -replace operation in a pair of parenthesis.
-
 # Example Lines:
 # Where-Object Extension -In $validPatterns |
 # ($_.Name -replace 'something', 'something else').ToUpper()
