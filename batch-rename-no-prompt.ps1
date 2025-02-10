@@ -23,11 +23,11 @@ pause
 
 # Example Lines:
 # Where-Object Extension -In $validPatterns |
-# ($_.BaseName -replace 'something', 'something else').ToUpper() + $_.Extension
+# ($_.Name -replace 'something', 'something else').ToUpper()
 # $_.Name + '_example'
 # For files: Where-Object Length -GT 0b | 
 
-# Need to append $_.Extension because $_.BaseName -replace removes the extension.
+# Need to append $_.Extension after $_.BaseName because $_.BaseName -replace removes the extension.
 # Last Dot Segment (.something) in a Folder Name is also Treated as an Extension ".something". Try: Get-ChildItem -Directory | Select-Object Name, BaseName, Extension
 
 # Second Argument in -replace operation does not need to escape special characters of regex.
